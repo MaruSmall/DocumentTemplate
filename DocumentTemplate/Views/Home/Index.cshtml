@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <p> Заполнение документов</p>
+</div>
+
+<div>
+    <h3>Выберите файл для загрузки</h3>
+    <form asp-action="FileProcessing" asp-controller="Home" method="post" enctype="multipart/form-data">
+        <input type="file" name="uploadedFile" /><br>
+        <input type="submit" value="Загрузить" />
+    </form>
+    
+</div>
+<div>
+    <button><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SendEmail">Отправить по почте</a></button>
+</div>
+

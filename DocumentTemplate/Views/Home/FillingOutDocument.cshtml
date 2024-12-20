@@ -1,0 +1,53 @@
+﻿@model DocumentTemplate.ViewModels.FillingOutDocumentVm
+
+
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="FillingInFile">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @Html.HiddenFor(i => i.File)
+            @Html.HiddenFor(i => i.ContentType)
+            @Html.HiddenFor(i => i.FileName)
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (var i = 0; i < Model.Fields.Count; i++)
+                    {
+
+                        <tr>
+                            <td>
+                                <input class="form-control" asp-for="@Model.Fields[@i].Name" />
+                            </td>
+                            <td>
+                                <input class="form-control" asp-for="@Model.Fields[@i].Tag" />
+                            </td>
+                            <td>
+                                <input class="form-control" asp-for="@Model.Fields[@i].Value" />
+                            </td>
+                            
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+           
+            <div class="form-group">
+                <input type="submit" value="Сгенерировать документ" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
