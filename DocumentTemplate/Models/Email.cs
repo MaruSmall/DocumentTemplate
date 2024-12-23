@@ -28,6 +28,11 @@ namespace DocumentTemplate.Models
         public string Subject { get; set; }
 
         /// <summary>
+        /// Тело
+        /// </summary>
+        public string Body { get; set; }
+
+        /// <summary>
         /// Вложение
         /// </summary>
         public byte[] Attachment { get; set; }
